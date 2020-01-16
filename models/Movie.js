@@ -12,7 +12,8 @@ var mongoose = require('mongoose');
 
 var movieSchema = new mongoose.Schema({
 
-plot: String,
+    poster: String,
+    plot: String,
     genres: [String],
     runtime: Number,
     cast: [String],
@@ -43,11 +44,11 @@ plot: String,
             meter: Number
         },
         lastupdated: Date,
-        
+
     },
-    
+
     //specifying the collection just for shits and giggles
-    collection: 'movies'
+    //collection: 'movies'
 
 });
 
