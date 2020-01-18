@@ -3,13 +3,26 @@
 
 <head>
   <title><%= pagetitle %></title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
-  <h1><%= movies[1].title %></h1>
-    <h1><%= movies[1].fullplot %></h1>
-    <img src="<%= movies[1].poster %>" alt="poster">
+  <ul>
+
+
+    <% for(var i = 0; i < movies.length; i++) { %>
+
+    <li>
+
+      <h1> <a href="movies/<%= movies[i]._id %>">
+          <%= movies[i].title  %></h1>
+
+    </li>
+    </a>
+
+    <% } %>
+
+
+  </ul>
 
 </body>
 

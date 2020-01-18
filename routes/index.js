@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
 //require the schema model
 var Movie = require('../models/Movie.js');
 
@@ -7,11 +8,14 @@ var Movie = require('../models/Movie.js');
 /* GET home page. */
 router.get('/', function (req, res, next) {
   //a WHERE clause. narrow it down. give it a limit
-  var q = Movie.find({ genres: 'Drama' }).limit(20);
-  q.exec(function(err, movies) {
+  var q = Movie.find().limit(20);
+  q.exec(function (err, movies) {
     if (err) return next(err);
     //res.json(movies);
-    res.render('index', { pagetitle: 'Movie List', movies: movies });
+    res.render('index', {
+      pagetitle: 'Movie List',
+      movies: movies
+    });
 
     /**
      * * if there's an error, return it and stop execution
@@ -25,12 +29,32 @@ router.get('/', function (req, res, next) {
      * * comment OUT routes for vue. they're not needed.
      */
 
-  //Movie.find(function (err, movies) {
-  //  if (err) return next(err);
-  //  res.json(movies);
-    
+    //Movie.find(function (err, movies) {
+    //  if (err) return next(err);
+    //  res.json(movies);
+
   });
 
 });
+
+//in laravel, you would use {id}
+router.get('/movies/:id', function (req, res, next) {
+
+  Movie.findOne({
+    '_id': req.params.id
+  }, function (err, movie) {
+    //if there's an error give it to us
+    if (err) return next(err);
+    //res.json(movie);
+    res.render('details', {
+      title: 'movie',
+      movie: movie
+    });
+
+  }); //end of find query
+}); //end of route
+
+
+
 
 module.exports = router;
