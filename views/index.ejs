@@ -1,29 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <title><%= pagetitle %></title>
+  <% include partials/header%>
 </head>
 
 <body>
-  <ul>
+  <% include partials/nav%>
 
 
-    <% for(var i = 0; i < movies.length; i++) { %>
+  <div class="mask cloudy-knoxville-gradient d-flex justify-content-center align-items-center">
 
-    <li>
+    <!-- Content -->
+    <div class="pt-5 pb-5 px-md-3 px-sm-0">
 
-      <h1> <a href="movies/<%= movies[i]._id %>">
-          <%= movies[i].title  %></h1>
+      <!--Grid row-->
+      <div class="row">
 
-    </li>
-    </a>
+        <!--Grid column-->
+        <div class="col-md-12 mb-4">
 
-    <% } %>
+          <h3 class="display-3 font-weight-bold mb-5">
+            MFLIX Shortlist
+          </h3>
+          <span class="subtext-header mt-2 mb-4 text-left">
+            <ul>
 
 
-  </ul>
+              <% for(var i = 0; i < movies.length; i++) { %>
 
+              <li>
+
+                <h4> <a href="movies/<%= movies[i]._id %>">
+                    <%= movies[i].title  %></h4>
+
+              </li>
+              </a>
+
+              <% } %>
+
+
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <% include partials/footer%>
 </body>
 
 </html>
