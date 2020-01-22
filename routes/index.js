@@ -54,7 +54,23 @@ router.get('/movies/:id', function (req, res, next) {
   }); //end of find query
 }); //end of route
 
+/* GET fantasy. */
+router.get('/fantasy', function (req, res, next) {
+  //a WHERE clause. narrow it down. give it a limit
+  var q = Movie.find({
+    genres: 'Fantasy'
+  }).limit(20);
+  q.exec(function (err, movies) {
+    if (err) return next(err);
+    //res.json(fantasy);
+    res.render('fantasy', {
+      pagetitle: 'fantasy movies',
+      movies: movies
+    });
 
+  });
+
+});
 
 
 module.exports = router;

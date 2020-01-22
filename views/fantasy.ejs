@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= pagetitle %></title>
+</head>
+
+<body>
+    <ul>
+
+
+        <% for(var i = 0; i < movies.length; i++) { %>
+
+        <li>
+
+            <h1> <a href="movies/<%= movies[i]._id %>">
+                    <%= movies[i].title  %></h1>
+
+        </li>
+        </a>
+
+        <% } %>
+
+
+    </ul>
+
+</body>
+
+</html>
