@@ -10,7 +10,7 @@
   <% include partials/nav%>
 
 
-  <div class="mask cloudy-knoxville-gradient d-flex justify-content-center align-items-center">
+  <div class="container-fluid mask cloudy-knoxville-gradient d-flex justify-content-center align-items-center">
 
     <!-- Content -->
     <div class="pt-5 pb-5 px-md-3 px-sm-0">
@@ -21,8 +21,8 @@
         <!--Grid column-->
         <div class="col-md-12 mb-4">
 
-          <h3 class="display-3 font-weight-bold mb-5">
-            MFLIX Shortlist
+          <h3 class="font-weight-bold mb-5">
+            <%= pagetitle %>
           </h3>
           <span class="subtext-header mt-2 mb-4 text-left">
             <ul>
@@ -31,14 +31,13 @@
               <% for(var i = 0; i < movies.length; i++) { %>
 
               <li>
+                <a href="movies/<%= movies[i]._id %>">
+                  <b class="h3">
+                    <%= movies[i].title  %> </b class="display-4">
+                </a> <small style="border-radius:20px;background-color:#dddada"
+                  class="pt-1 pb-1 pl-1 pr-1"><i><%= movies[i].genres  %></i></small>
 
-                <h4> <a href="movies/<%= movies[i]._id %>">
-                    <%= movies[i].title  %></h4>
-
-              </li>
-              </a>
-
-              <% } %>
+                <% } %>
 
 
             </ul>

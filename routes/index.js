@@ -13,7 +13,7 @@ router.get('/', function (req, res, next) {
     if (err) return next(err);
     //res.json(movies);
     res.render('index', {
-      pagetitle: 'Movie List',
+      pagetitle: 'MFLIX Shortlist',
       movies: movies
     });
 
@@ -47,7 +47,7 @@ router.get('/movies/:id', function (req, res, next) {
     if (err) return next(err);
     //res.json(movie);
     res.render('details', {
-      title: 'movie',
+      pagetitle: 'Movie Details',
       movie: movie
     });
 
@@ -64,7 +64,7 @@ router.get('/fantasy', function (req, res, next) {
     if (err) return next(err);
     //res.json(fantasy);
     res.render('fantasy', {
-      pagetitle: 'fantasy movies',
+      pagetitle: 'Mflix Fantasy',
       movies: movies
     });
 
@@ -83,7 +83,7 @@ router.get('/:sort', function (req, res, next) {
     if (err) return next(err);
     //res.json(movies);
     res.render('index', {
-      pagetitle: 'movies sorted by ascending order',
+      pagetitle: 'Lowest Rated Movies on IMDB',
       movies: movies
     });
 

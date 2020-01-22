@@ -1,28 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title><%= pagetitle %></title>
+    <% include partials/header%>
 </head>
 
 <body>
-    <h1><%= title %></h1>
-    <p>
+    <% include partials/nav%>
 
+    <div class="container my-5">
 
-        <ul>
-            <li><img src="<%= movie.poster %>"></li>
-            <li><%= movie.title  %></li>
-            <li><%= movie.genres  %></li>
-            <li>rating:<%= movie.imdb.rating  %></li>
-            <li><%= movie.fullplot  %></li>
+        <section>
 
-        </ul>
+            <div class="card mb-4">
 
+                <div class="row">
 
+                    <div class="col-md-6">
+                        <img class="img-fluid rounded-left" src="<%= movie.poster %>" alt="movie poster">
+                    </div>
 
-    </p>
+                    <div class="col-md-6 p-5 align-self-center">
+
+                        <h5 class="font-weight-normal mb-3"><%= movie.title  %></h5>
+
+                        <p class="text-muted"><%= movie.fullplot  %></p>
+
+                        <ul class="list-unstyled font-small mt-5 mb-0">
+                            <li>
+                                <p class="text-uppercase mb-2"><strong>Rating</strong></p>
+                                <p class="text-muted mb-4"><%= movie.imdb.rating  %></p>
+                            </li>
+
+                            <li>
+                                <p class="text-uppercase mb-2"><strong>Genres</strong></p>
+                                <p class="text-muted mb-4"><%= movie.genres  %></p>
+                            </li>
+
+                            <li>
+                                <p class="text-uppercase mb-2"><strong>Released</strong></p>
+                                <p class="text-muted mb-4"><%= movie.released  %></p>
+                            </li>
+
+                            <li>
+                                <p class="text-uppercase mb-2"><strong>Runtime</strong></p>
+                                <%= movie.runtime  %>
+                            </li>
+
+                            <li>
+                                <p class="text-uppercase mt-4 mb-2"><strong>Share</strong></p>
+                                <div class="d-flex justify-content-start">
+                                    <a class="text-muted pr-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="text-muted pr-3" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="text-muted pr-3" href="#"><i class="fab fa-instagram"></i></a>
+                                    <a class="text-muted" href="#"><i class="fab fa-dribbble"></i></a>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <% include partials/footer%>
 </body>
 
 </html>
