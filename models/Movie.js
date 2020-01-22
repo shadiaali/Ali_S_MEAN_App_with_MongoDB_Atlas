@@ -46,10 +46,8 @@ var movieSchema = new mongoose.Schema({
         lastupdated: Date,
 
     },
-
-    //specifying the collection just for shits and giggles
-    //collection: 'movies'
-
 });
+
+
 
 module.exports = mongoose.model('Movie', movieSchema);
