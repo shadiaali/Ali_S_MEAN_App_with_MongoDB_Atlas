@@ -8,3 +8,4 @@
 - third route for fantasy genre
 - to do: A sorted selection of movies 
 - to do: Modify model to include content not in the class example.
+- to do: css 
