@@ -73,4 +73,23 @@ router.get('/fantasy', function (req, res, next) {
 });
 
 
+/* sort ascending/worst rated movies. */
+router.get('/:sort', function (req, res, next) {
+  //a WHERE clause. narrow it down. give it a limit
+  var q = Movie.find().limit(20).sort({
+    'imdb.rating': 1
+  });
+  q.exec(function (err, movies) {
+    if (err) return next(err);
+    //res.json(movies);
+    res.render('index', {
+      pagetitle: 'movies sorted by ascending order',
+      movies: movies
+    });
+
+  });
+
+});
+
+
 module.exports = router;
