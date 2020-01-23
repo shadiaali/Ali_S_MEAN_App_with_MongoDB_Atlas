@@ -18,9 +18,9 @@ mongoose.connect(
   },
   function (err) {
     if (err) {
-      console.log("error connecting", err);
+      console.log("there was an error connecting", err);
     } else {
-      console.log("connected");
+      console.log("Connected! Go to http://localhost:3000/");
     }
   }
 );
