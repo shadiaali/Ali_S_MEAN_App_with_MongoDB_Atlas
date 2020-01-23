@@ -1,4 +1,4 @@
-# inclass_mongo
+# MEAN App with MongoDB Atlas
  MEAN App with MongoDB Atlas
 
 ## Specifics
